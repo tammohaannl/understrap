@@ -12,7 +12,6 @@ var sourcemaps = require( 'gulp-sourcemaps' );
 var browserSync = require( 'browser-sync' ).create();
 var del = require( 'del' );
 var cleanCSS = require( 'gulp-clean-css' );
-var replace = require( 'gulp-replace' );
 var autoprefixer = require( 'autoprefixer' );
 
 // Configuration file to keep your code DRY
@@ -288,17 +287,10 @@ gulp.task(
 					'!' + paths.composer,
 					'!' + paths.composer + '/**',
 					'!+(readme|README).+(txt|md)',
-					'!*.+(json|js|lock|xml)',
+					'!*.+(dist|json|js|lock|xml)',
 					'!CHANGELOG.md',
 				],
 				{ buffer: true }
-			)
-			.pipe(
-				replace(
-					'/js/skip-link-focus-fix.js',
-					'/js' + paths.vendor + '/skip-link-focus-fix.js',
-					{ skipBinary: true }
-				)
 			)
 			.pipe( gulp.dest( paths.dist ) );
 	} )
