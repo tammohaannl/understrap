@@ -2,14 +2,14 @@
 /**
  * UnderStrap functions and definitions
  *
- * @package UnderStrap
+ * @package Understrap
  */
 
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
 // UnderStrap's includes directory.
-$understrap_inc_dir = get_template_directory() . '/inc';
+$understrap_inc_dir = 'inc';
 
 // Array of files to include.
 $understrap_includes = array(
@@ -25,6 +25,7 @@ $understrap_includes = array(
 	'/custom-comments.php',                 // Custom Comments file.
 	'/class-wp-bootstrap-navwalker.php',    // Load custom WordPress nav walker. Trying to get deeper navigation? Check out: https://github.com/understrap/understrap/issues/567.
 	'/editor.php',                          // Load Editor functions.
+	'/block-editor.php',                    // Load Block Editor functions.
 	'/deprecated.php',                      // Load deprecated functions.
 );
 
@@ -40,5 +41,5 @@ if ( class_exists( 'Jetpack' ) ) {
 
 // Include files.
 foreach ( $understrap_includes as $file ) {
-	require_once $understrap_inc_dir . $file;
+	require_once get_theme_file_path( $understrap_inc_dir . $file );
 }

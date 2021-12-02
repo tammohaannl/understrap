@@ -2,7 +2,7 @@
 /**
  * Rest in peace
  *
- * @package UnderStrap
+ * @package Understrap
  */
 
 // Exit if accessed directly.
@@ -12,7 +12,7 @@ if ( ! function_exists( 'understrap_adjust_body_class' ) ) {
 	/**
 	 * Setup body classes.
 	 *
-	 * @param string $classes CSS classes.
+	 * @param array $classes CSS classes.
 	 *
 	 * @deprecated 0.9.4 Styling of tag has been removed in Bootstrap v4 Alpha 6.
 	 * @link https://github.com/twbs/bootstrap/issues/20939
@@ -68,4 +68,23 @@ if ( ! function_exists( 'understrap_slbd_count_widgets' ) ) {
 			return $widget_classes;
 		endif;
 	}
+}
+
+/**
+ * This function has never existed in any of the templates. It serves to extract
+ * strings for translations which have been removed or changed and may still be
+ * be present in child themes. The corresponding translations are not maintained.
+ */
+function deprecated_translations() {
+	array(
+		__( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'understrap' ),
+		__( 'Previous', 'understrap' ),
+		__( 'Next', 'understrap' ),
+		__( 'About:', 'understrap' ),
+		__( 'Profile', 'understrap' ),
+		__( 'Posts by', 'understrap' ),
+		__( 'Permanent Link:', 'understrap' ),
+		__( 'in', 'understrap' ),
+		__( 'Edit', 'understrap' ),
+	);
 }
